@@ -30,19 +30,17 @@ module h6to64(x, b, en);
 
     h3to8 dS(x[3 +: 3], w, 1);
 
-    h3to8 decoder0(x[0 +: 3], b4[0  +: 8], w[0]);
-    h3to8 decoder1(x[0 +: 3], b4[8  +: 8], w[1]);
-    h3to8 decoder2(x[0 +: 3], b4[16 +: 8], w[2]);
-    h3to8 decoder3(x[0 +: 3], b4[24 +: 8], w[3]);
-    h3to8 decoder4(x[0 +: 3], b4[32 +: 8], w[4]);
-    h3to8 decoder5(x[0 +: 3], b4[40 +: 8], w[5]);
-    h3to8 decoder6(x[0 +: 3], b4[48 +: 8], w[6]);
-    h3to8 decoder7(x[0 +: 3], b4[56 +: 8], w[7]);
+//    h3to8 decoder0(x[0 +: 3], b[0  +: 8], w[0]);
+//    h3to8 decoder1(x[0 +: 3], b[8  +: 8], w[1]);
+//    h3to8 decoder2(x[0 +: 3], b[16 +: 8], w[2]);
+//    h3to8 decoder3(x[0 +: 3], b[24 +: 8], w[3]);
+//    h3to8 decoder4(x[0 +: 3], b[32 +: 8], w[4]);
+//    h3to8 decoder5(x[0 +: 3], b[40 +: 8], w[5]);
+//    h3to8 decoder6(x[0 +: 3], b[48 +: 8], w[6]);
+//    h3to8 decoder7(x[0 +: 3], b[56 +: 8], w[7]);
 
-//    genvar i;
-//    generate
-//        for (i=0; i<8; i=i+1) begin
-//            h3to8 d(x[0 +: 3], b4[i*8 +: 8], w[i]);
-//        end
-//    endgenerate
+    genvar i;
+    for (i=0; i<8; i=i+1) begin
+        h3to8 d(x[0 +: 3], b[i*8 +: 8], w[i]);
+    end
 endmodule
